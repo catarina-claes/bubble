@@ -6,13 +6,15 @@ public class BobaRespawn : MonoBehaviour
 {
     public GameObject bluePrint;
     private GameObject bobaList;
-    private int respawnCount;
+    private float respawnCount, x, y;
     void Start()
     {
+        x = transform.parent.position.x;
+        y = transform.parent.position.y;
         respawnCount = Random.Range(5, 30);
         for (int i = 0; i < respawnCount; i++)
         {
-            bobaList = Instantiate(bluePrint, new Vector3(Random.Range(-13f, 14f), Random.Range(-8f, 8f), 0), Quaternion.identity) as GameObject;
+            bobaList = Instantiate(bluePrint, new Vector3(Random.Range(x - 16, x + 16), Random.Range(y - 9, y + 9), 0), Quaternion.identity) as GameObject;
             bobaList.transform.parent = transform;
         }
     }
