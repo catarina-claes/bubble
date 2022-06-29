@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Push()
     {
-        force = scrollbar.value * 100;
+        force = scrollbar.value * 1000;
         rb.velocity = Vector2.zero;
         rb.AddForce(new Vector2(x * force, y * force));
     }
