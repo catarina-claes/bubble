@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     {
         x = joystick.Direction.x;
         y = joystick.Direction.y;
+        if (Input.GetButtonDown("Jump"))
+        {
+            Push();
+        }
     }
 
     public void Push()
